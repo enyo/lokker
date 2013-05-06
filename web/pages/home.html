@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <element name="x-home" extends="section">
+      <template>
+        <div class="jumbotron">
+          <h1>Welcome to lokker!</h1>
+          <p>
+            This is a secure online wallet.
+            Your content is encrypted in the browser, and securely sent to the server.
+          </p>
+          <p>
+            Please sign in with your Google account:
+          </p>
+          <span id="signinButton">
+            <span
+              class="g-signin"
+              data-callback="signinCallback"
+              data-clientid="624706025332.apps.googleusercontent.com"
+              data-cookiepolicy="single_host_origin"
+              data-requestvisibleactions="http://schemas.google.com/AddActivity"
+              data-scope="https://www.googleapis.com/auth/plus.login">
+            </span>
+          </span>
+        </div>
+      </template>
+    </element>
+  </body>
+</html>

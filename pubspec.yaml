@@ -1,0 +1,7 @@
+name: lokker
+description: Secure digital wallet.
+dependencies:
+  js: any
+  browser: any
+  web_ui: any
+  route: any

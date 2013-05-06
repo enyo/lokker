@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- This file was auto-generated from web/index.html. -->
+<html><head><style>template { display: none; }</style>
+    <meta charset="utf-8">
+    <title>Lokker</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="import" href="../pages/home.html">
+    <link rel="import" href="../pages/register.html">
+
+    <script defer="" async="" src="https://apis.google.com/js/client:plusone.js"></script>
+
+    <script>
+      var signinCallback = function(authResult) {
+
+        gapi.client.load('plus','v1', function() {
+          if (authResult['access_token']) {
+            // Logged in
+            var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+            request.execute(function(profile) {
+              signedIn(profile, authResult); // Invoke dart.
+            });
+          } else if (authResult['error']) {
+            // There was an error, which means the user is not signed in.
+            // As an example, you can handle by writing to the console:
+            console.log('There was an error: ' + authResult['error']);
+            signedOut(); // Invoke dart.
+          }
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <nav class="main navbar">
+        <!-- these links are turned into route switchers on startup -->
+        <a class="navbar-brand" href="/">Lokker</a>
+        <ul class="nav navbar-nav">
+          <li><a href="/" class="home">Home</a></li>
+          <li><a href="/register" class="register">Register</a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <template></template>
+        <template></template>
+      </div>
+
+      <!--
+      <p>Hello world from Dart!</p>
+
+      <div id="sample_container_id">
+        <div is="x-click-counter" id="click_counter" count="{{startingCount}}"></div>
+      </div>
+      -->
+    </div>
+
+    
+    <script src="../packages/browser/dart.js"></script>
+
+
+    <!--<script defer="defer" src="https://apis.google.com/js/client:plusone.js"></script>-->
+
+  
+
+<script type="application/dart" src="index.html_bootstrap.dart"></script></body></html>
